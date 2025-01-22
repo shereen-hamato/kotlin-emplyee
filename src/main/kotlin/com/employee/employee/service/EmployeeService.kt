@@ -1,8 +1,11 @@
-class EmployeeService(private val employeeRepository:EmployeeRepository){
-    fun getAllEmployee():List<Employee> = employeeRepository.getAllEmployee()
+import com.employee.employee.entity.Employee
+import com.employee.employee.repository.EmployeeRepository
 
-    fun getEmployeeById(val id:Long):Employee = employeeRepository.findById(id)
-    .orElseThrow{RunTimException("Employee not found")}
+class EmployeeService(private val employeeRepository: EmployeeRepository){
+    fun getAllEmployee():List<Employee> = employeeRepository.findAll()
+
+    fun getEmployeeById(id:Long):Employee = employeeRepository.findById(id)
+    .orElseThrow{RuntimeException("Employee not found")}
 
 
 
