@@ -1,6 +1,9 @@
+package com.employee.employee.service
 import com.employee.employee.entity.Employee
 import com.employee.employee.repository.EmployeeRepository
+import org.springframework.stereotype.Service
 
+@Service
 class EmployeeService(private val employeeRepository: EmployeeRepository){
     fun getAllEmployee():List<Employee> = employeeRepository.findAll()
 
